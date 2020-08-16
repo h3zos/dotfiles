@@ -1,21 +1,16 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-        name = Aurélien
-    email = aurelien.aoustin@epitech.eu
-        signingkey = 0xEC28995E4DEFA6EB
+	name = Aurélien Aoustin
+	email = aurelien.aoustin@epitech.eu
 [core]
-    editor = vim
-[gpg]
-    program = gpg2
+	editor = nvim
 [color]
-        ui = true
+	ui = true
 [alias]
-        st = status
-        ci = commit
-        co = checkout
-        br = branch
-    di = diff
-    lg = log --graph --all --decorate
-#[push]
-#       gpgSign = true
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	di = diff
+	lg = log --graph --all --decorate
