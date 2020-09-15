@@ -14,3 +14,7 @@
 	br = branch
 	di = diff
 	lg = log --graph --all --decorate
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
