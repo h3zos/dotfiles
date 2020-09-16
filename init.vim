@@ -57,7 +57,7 @@ call plug#end()
     inoremap ' ''<left>
     inoremap ( ()<left>
     inoremap [ []<left>
-    inoremap { {}<left>
+    inoremap { {<CR><BS>}<Esc>ko
 
 " Cursor config
     highlight Cursor gui=reverse
