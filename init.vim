@@ -9,19 +9,20 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
+Plug 'tommcdo/vim-lion'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Some basics:
     set encoding=utf-8
-
+    set termguicolors
+    let g:python3_host_prog = '/usr/bin/python3'
 " Indent and line formating
     set tabstop=4
     set shiftwidth=4
     set expandtab
-
     syntax on
     colorscheme monokai
-    set termguicolors
     set number relativenumber
     set path+=**
     set clipboard=unnamedplus
@@ -32,6 +33,7 @@ call plug#end()
     set autoread "Reload a file when it is changed from the outside
     set lazyredraw "attemps to kill vim lag
     set ttimeoutlen=0 "no timeout when switching modes
+    autocmd BufNewFile,BufRead *.h set filetype=c
     set scrolloff=5
 
 " Search option
@@ -59,11 +61,6 @@ call plug#end()
     inoremap [ []<left>
     inoremap { {<CR><BS>}<Esc>ko
 
-" Cursor config
-    highlight Cursor gui=reverse
-    set guicursor=n-v-c-i:block-Cursor
-    set guicursor+=n-v-c-i:blinkon1
-
     set list                              " show whitespace
     set listchars=nbsp:⦸                  " CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
     set listchars+=tab:▷┅                 " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7)
@@ -89,3 +86,7 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" coc config
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
