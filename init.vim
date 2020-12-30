@@ -10,7 +10,6 @@ Plug 'tpope/vim-commentary'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
 Plug 'tommcdo/vim-lion'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Some basics:
