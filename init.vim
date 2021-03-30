@@ -2,17 +2,21 @@ call plug#begin('~/.vim/plugged')
 " Theme
 Plug 'crusoexia/vim-monokai'
 Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
 " Tools
 Plug 'h3zos/vim-epitech'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
 Plug 'tommcdo/vim-lion'
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 " Some basics:
+    source $HOME/.config/nvim/plug-config/coc.vim
     set encoding=utf-8
     set termguicolors
     let g:python3_host_prog = '/usr/bin/python3'
@@ -32,7 +36,6 @@ call plug#end()
     set autoread "Reload a file when it is changed from the outside
     set lazyredraw "attemps to kill vim lag
     set ttimeoutlen=0 "no timeout when switching modes
-    autocmd BufNewFile,BufRead *.h set filetype=c
     set scrolloff=5
 
 " Search option
@@ -85,7 +88,3 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-
-" coc config
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
